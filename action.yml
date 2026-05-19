@@ -3,7 +3,7 @@ description: Composite action to greet the world
 
 
 inputs:
-  name:
+  name_to_greet:
     description: 'Name to greet'
     required: false
     default: 'World'
