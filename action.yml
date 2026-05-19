@@ -1,0 +1,9 @@
+name: Greeter
+description: Composite action to greet the world
+
+runs:
+  using: "composite"
+  steps:
+    - name: Say Hello
+      run: echo "Hello, World!"
+      shell: bash
