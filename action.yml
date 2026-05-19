@@ -12,5 +12,5 @@ runs:
   using: "composite"
   steps:
     - name: Say Hello
-      run: echo "Hello, ${{ inputs.name }}!"
+      run: echo "Hello, ${{ inputs.name_to_greet }}!"
       shell: bash
