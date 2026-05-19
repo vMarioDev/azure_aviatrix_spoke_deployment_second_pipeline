@@ -1,0 +1,21 @@
+name: Check Breakout
+description: Composite action to check breakout
+
+inputs:
+  exclude:
+    required: false
+    default: 'env,venv'
+
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check Breakout
+      run: |
+       if grep -rnw --exclude-dir={${{ inputs.exclude }}} --include='*.py' 'breakout' .; then
+         echo "Breakout found in the codebase. Please remove it before proceeding."
+         exit 1
+       else
+         echo "No breakout found. Proceeding with the workflow."
+       fi
+      shell: bash
